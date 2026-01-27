@@ -1,13 +1,17 @@
 @use './themes/dark.scss';
 @use './themes/light.scss';
 @use './themes/medium.scss';
-@use './globalVars/globalVars.scss';
+@use './globalVars.scss';
+@use './resetDefaultStyles.scss';
  :root{
 background-color: var(--bg-color);
+
  }
+body{
+margin: 0 auto;
+}
 .app {
   margin: 0;
-
   min-width: 320px;
   min-height: 100vh;
 background-color: var(--bg-color);
@@ -27,7 +31,7 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto rgba(var(--secondary-color),0.5);
 }
 
 a {
