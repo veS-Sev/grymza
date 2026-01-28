@@ -9,7 +9,6 @@ interface PortalProps{
   }
 
 
-export const Portal = ({ children, mountNode }: PortalProps) => {
-  
-return createPortal(children, mountNode=document.body)
-}
+export const Portal = ({ children, mountNode = document.body }: PortalProps) => {
+  return createPortal(children, mountNode);
+};

@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { classNames, type Mods } from "../../../lib/classNames/classNames";
 import cls from "./Modal.module.scss";
 import { Overlay } from "../../Overlay/index";
