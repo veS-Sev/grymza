@@ -1,6 +1,10 @@
-.app-light-theme {
+:root {.light-theme {
   --bg-color: #eedfdf;
-    --primary-color: #292525;
+  --primary-color: #292525;
   --secondary-color: #496339f7;
-    --important-color: #FB0004;
-}
+  --important-color: #FB0004;
+
+  //overlay color
+
+  --overlay-color:#b07e87f9;
+}}

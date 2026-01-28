@@ -1,20 +1,26 @@
+@use './resetDefaultStyles.scss';
+@use './globalVars.scss';
 @use './themes/dark.scss';
 @use './themes/light.scss';
 @use './themes/medium.scss';
-@use './globalVars.scss';
-@use './resetDefaultStyles.scss';
- :root{
-background-color: var(--bg-color);
 
- }
-body{
-margin: 0 auto;
+
+
+:root {
+background-color: #fff;
+
 }
+
+body {
+  margin: 0 auto;
+}
+
 .app {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-background-color: var(--bg-color);
+  background-color: var(--bg-color);
+  position: relative;
 }
 
 h1 {
@@ -22,16 +28,17 @@ h1 {
   line-height: 1.1;
 }
 
-button{
+button {
   background-color: var(--secondary-color);
 }
 
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto rgba(var(--secondary-color),0.5);
+  outline: 4px auto rgba(var(--secondary-color), 0.5);
 }
 
 a {

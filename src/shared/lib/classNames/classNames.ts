@@ -1,6 +1,6 @@
 
 export type Mods = Record<string, boolean | string | undefined>
-export const classNames = (csl: string, extra: Array<string|undefined>=[], mods: Mods = {}) => {
+export const classNames = (csl: string, extra: Array<string|undefined>=[], mods: Mods|undefined = {}) => {
   return [
     csl,
     ...extra.filter(Boolean),
