@@ -10,6 +10,9 @@ import { Link, Route, Routes } from "react-router-dom";
 import IntroducePage from "../pages/IntroducePage/IntroducePage";
 import { MainPage } from "../pages/MainPage/index";
 import { PageLayout } from "./layouts/PageLayout";
+import { Skeleton } from "../shared/ui/Skeleton";
+import { SkeletonFigure, SkeletonSize } from "../shared/ui/Skeleton/ui/Skeleton.types";
+
 
 function App() {
   const { theme } = useContext<ThemeContextProps>(ThemeContext);
@@ -32,12 +35,14 @@ function App() {
       <Button onClick={modalOpen}>{"Modal Button"}</Button>
       <Routes>
         <Route path='/pages' element={<PageLayout />}>
-        {/*These two pages will be loaded with /pages/namepage path*/}
-        <Route path='main' element={<MainPage />}></Route>
+          {/*These two pages will be loaded with /pages/namepage path*/}
+          <Route path='main' element={<MainPage />}></Route>
           <Route path='introduce' element={<IntroducePage />}></Route>
         </Route>
         <Route path='*' element={<h3>Page not found</h3>}></Route>
       </Routes>
+      <Skeleton figure={SkeletonFigure.RING} size={SkeletonSize.S} />
+      <Skeleton figure={SkeletonFigure.SQUARE} size={SkeletonSize.S} />
       <Modal
         className={"app-modal"}
         isOpenModal={isModal}

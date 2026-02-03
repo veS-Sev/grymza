@@ -22,7 +22,7 @@ const {theme}=useTheme()
     [cls.open]: isOpenModal,
 
   }
-  console.log('222',isOpenModal)
+  console.log('888',isOpenModal)
   return (
     <Portal>
       <div className={classNames(cls.Modal, [className,theme], mods)}>

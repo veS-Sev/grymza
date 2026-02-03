@@ -1,0 +1,52 @@
+$sizes: (
+  "extra-small": 25px,
+  "small": 50px,
+  "middle": 100px,
+  "large": 150px,
+  "extra-large": 250px
+);
+
+.Skeleton {
+  position: relative;
+  background-color: var(--skeleton-color);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.Skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-25deg);
+  animation: shine 1s infinite;
+}
+
+@keyframes shine {
+  100% {
+    left: 150%;
+  }
+}
+
+.ring {
+  border-radius: 50%; 
+  @each $name, $value in $sizes {
+    &.#{$name} {
+      width: $value;
+      height: $value;
+    }
+  }
+}
+
+.square{
+  width: 100%;
+  border-radius: 4px;
+  @each $name, $value in $sizes{
+    &.#{$name}{
+      height: $value;
+    }
+  }
+}
