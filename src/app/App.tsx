@@ -10,9 +10,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import IntroducePage from "../pages/IntroducePage/IntroducePage";
 import { MainPage } from "../pages/MainPage/index";
 import { PageLayout } from "./layouts/PageLayout";
-import { Skeleton } from "../shared/ui/Skeleton";
-import { SkeletonFigure, SkeletonSize } from "../shared/ui/Skeleton/ui/Skeleton.types";
-
+import { AuthForm } from "../entities/AuthForm/ui/AuthForm";
 
 function App() {
   const { theme } = useContext<ThemeContextProps>(ThemeContext);
@@ -24,6 +22,9 @@ function App() {
     setModal(false);
   };
 
+  const loginHandler = () => {
+    console.log('Let`s login')
+}
   return (
     <div className={classNames("app", [theme], {})}>
       <nav>
@@ -33,6 +34,8 @@ function App() {
       <h1>Vite + React</h1>
       <ThemeSwitcher />
       <Button onClick={modalOpen}>{"Modal Button"}</Button>
+      <Button onClick={loginHandler}>{"Log in"}</Button>
+      <AuthForm />
       <Routes>
         <Route path='/pages' element={<PageLayout />}>
           {/*These two pages will be loaded with /pages/namepage path*/}
@@ -41,8 +44,6 @@ function App() {
         </Route>
         <Route path='*' element={<h3>Page not found</h3>}></Route>
       </Routes>
-      <Skeleton figure={SkeletonFigure.RING} size={SkeletonSize.S} />
-      <Skeleton figure={SkeletonFigure.SQUARE} size={SkeletonSize.S} />
       <Modal
         className={"app-modal"}
         isOpenModal={isModal}

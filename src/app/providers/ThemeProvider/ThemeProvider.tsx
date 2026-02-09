@@ -12,7 +12,6 @@ const userTheme = (localStorage.getItem('grymzaTheme'))as Theme||Theme.LIGHT
 
 export const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme>(initialTheme||userTheme)
-  console.log(userTheme)
 return(
 <ThemeContext.Provider value={{theme,setTheme
   
